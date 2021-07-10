@@ -60,7 +60,7 @@ path {
   top: 0;
   right: 0;
   padding: 0.5rem;
-  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border: none;
   background: rgb(73, 73, 73);
@@ -115,5 +115,15 @@ input[type="range"] {
   width: 100%;
   position: relative;
   border-radius: 1rem;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: visible;
   cursor: pointer;
 }
