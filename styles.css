@@ -45,10 +45,10 @@ path {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   /*We are adding an adjustment class */
-  /* transform: translateY(100px); */
+  transform: translateY(100px);
   transition: all 0.5s ease-in-out;
-  /* opacity: 0; */
-  /* pointer-events: none; */
+  opacity: 0;
+  pointer-events: none;
 }
 .sliders.active {
   opacity: 1;
@@ -140,6 +140,7 @@ input[type="range"]::-webkit-slider-thumb {
   align-items: center;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.5s ease-in-out;
 }
 
 .copy-popup {
