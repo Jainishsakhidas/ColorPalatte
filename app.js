@@ -47,6 +47,20 @@ closeAdjustments.forEach((button, index) => {
   });
 });
 
+lockButton.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const lockSvg = button.children[0];
+    colorDivs[index].classList.toggle("locked");
+    if (colorDivs[index].classList.contains("locked")) {
+      lockSvg.classList.add("fa-lock");
+      lockSvg.classList.remove("fa-lock-open");
+    } else {
+      lockSvg.classList.add("fa-lock-open");
+      lockSvg.classList.remove("fa-lock");
+    }
+  });
+});
+
 //Functions
 
 //Color Generator
@@ -70,7 +84,12 @@ function randomColors() {
     const icons = div.querySelectorAll(".controls button");
     const randomColor = generateHex();
 
-    initialColors.push(randomColor.hex());
+    if (div.classList.contains("locked")) {
+      initialColors.push(hexText.innerText);
+      return;
+    } else {
+      initialColors.push(randomColor.hex());
+    }
 
     //Add color to background
     div.style.backgroundColor = randomColor;
@@ -206,5 +225,7 @@ function openAdjustmentPanel(index) {
 function closeAdjustmentPanel(index) {
   sliderContainers[index].classList.remove("active");
 }
+
+//Implementing save to palette and local storage stuffs
 
 randomColors();
