@@ -72,6 +72,7 @@ function generateHex() {
   //     hash += hexLetters[Math.floor(Math.random() * 16)];
   //   }
   //   return hash;
+
   //using Chroma.js library
   const hexColor = chroma.random();
   return hexColor;
